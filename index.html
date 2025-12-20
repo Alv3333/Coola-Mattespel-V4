@@ -153,39 +153,13 @@ body.green { --accent:#00a300; --accent-dark:#004d00; }
     </div>
 
 
-   <div class="header">
-    <h1>Unblocked Games V4</h1>
-
-    <!-- Underubrik -->
-    <div class="subtitle">
-        Välkommen till <strong>Unblocked Games V4</strong>! Sidan har <strong>2000+ spel</strong> och erbjuder <strong>fullscreen</strong> samt sparfunktioner. Gjord av samma grabb som gjorde de andra <strong>Unblocked Games</strong>!
-    </div>
-
-    <div class="search-box">
-        <input placeholder="Sök spel..." oninput="filterGames()">
-    </div>
-</div>
-
-<style>
-.subtitle {
-    text-align: center;
-    font-size: 18px;
-    color: #ffffffcc; /* lite transparent vit text */
-    margin: 10px auto 30px auto;
-    max-width: 900px;
-    line-height: 1.6;
-}
-.subtitle strong {
-    color: var(--accent); /* matchar sidans accentfärg */
-}
-@media (max-width: 600px) {
-    .subtitle {
-        font-size: 16px;
-        padding: 0 15px;
-    }
-}
-</style>
-
+    <div class="main">
+        <div class="header">
+            <h1>Unblocked Games V4</h1>
+            <div class="search-box">
+                <input placeholder="Sök spel..." oninput="filterGames()">
+            </div>
+        </div>
 
         <div id="embedContainer">
             <iframe id="gameFrame"></iframe>
@@ -253,7 +227,7 @@ function renderGames(list){
 
 // ===== OPEN =====
 function openGame(file){
-    gameFrame.src = `UGS-Files/${file}.html`; // 👈 cl kvar
+    gameFrame.src = UGS-Files/${file}.html; // 👈 cl kvar
     embedContainer.style.display = "block";
     addRecent(file);
 }
