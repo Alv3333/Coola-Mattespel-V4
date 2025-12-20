@@ -179,6 +179,48 @@ body.pink{
     font-size:22px;
     background:linear-gradient(135deg,var(--accent-dark),var(--accent));
 }
+    /* ===== AURORA BACKGROUND (NYTT – LÄGGER TILL, TAR INGET BORT) ===== */
+body::before,
+body::after{
+    content:"";
+    position:fixed;
+    inset:-40%;
+    z-index:-1;
+    filter:blur(120px);
+    opacity:.55;
+    animation:auroraMove 40s ease-in-out infinite;
+    pointer-events:none;
+}
+
+/* Första aurora-lagret */
+body::before{
+    background:
+        radial-gradient(circle at 30% 30%, var(--accent), transparent 60%),
+        radial-gradient(circle at 70% 40%, var(--accent-dark), transparent 65%),
+        radial-gradient(circle at 50% 70%, var(--accent), transparent 60%);
+}
+
+/* Andra lagret – långsammare & offset */
+body::after{
+    background:
+        radial-gradient(circle at 60% 30%, var(--accent-dark), transparent 60%),
+        radial-gradient(circle at 20% 60%, var(--accent), transparent 65%);
+    animation-duration:60s;
+    opacity:.4;
+}
+
+@keyframes auroraMove{
+    0%{
+        transform:translate(0,0) rotate(0deg);
+    }
+    50%{
+        transform:translate(10%, -8%) rotate(180deg);
+    }
+    100%{
+        transform:translate(0,0) rotate(360deg);
+    }
+}
+
 </style>
 </head>
 
